@@ -1,0 +1,8 @@
+https://github.com/DJWOMS/FastAPI_ru?tab=readme-ov-file  :
+    https://github.com/DJWOMS/fastapi-microblog
+    https://github.com/DJWOMS/blog_FastAPI
+    https://github.com/DJWOMS/FastAPI-async-sqlalchemy
+    https://github.com/GregaVrbancic/fastapi-celery
+    https://github.com/paurakhsharma/python-microservice-fastapi
+    https://github.com/leosussan/fastapi-gino-arq-uvicorn
+https://github.com/p141592/simple_fastapi

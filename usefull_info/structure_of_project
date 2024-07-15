@@ -1,0 +1,18 @@
+project_name/
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── models/
+│   │   └── __init__.py
+│   └── routes/
+│       └── __init__.py
+├── static/
+    ├── src/
+    │   └── photo.png
+│   ├── css/
+│   │   └── styles.css
+│   ├── scripts/
+│   │   └── scripts.js
+├── templates/
+│   ├── index.html
+└── requirements.txt
