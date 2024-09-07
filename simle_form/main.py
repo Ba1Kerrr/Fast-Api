@@ -1,8 +1,18 @@
 from fastapi import FastAPI
-from fastapi.responses import FileResponse
+from pydantic import BaseModel
+
 
 app = FastAPI()
-
 @app.get("/")
-def read_root():
-    return FileResponse("index.html")
+
+async def home():
+   return {"data": "Hello World"}
+
+
+class STaskAdd(BaseModel):
+   name: str
+   description: str | None = None
+
+@app.post("/")
+async def add_task(task: STaskAdd):
+   return {"data": task}
