@@ -1,13 +1,14 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Body,Request
 from fastapi.responses import FileResponse
-from fastapi.staticfiles import StaticFiles
-
 app = FastAPI()
  
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
 @app.get("/")
-async def root():
+def root():
     return FileResponse("static/Home.html")
 
-@app.
+@app.post("/hello")
+def hello(data = Body()):
+    name = data["name"]
+    age = data["age"]
+    return {"message": "Hello World"}
+

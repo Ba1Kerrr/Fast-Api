@@ -1,32 +1,18 @@
-import psycopg2
-from main import name,age,email
-conn = psycopg2.connect(
-    host = "localhost",
-    dbname = "postgres",
-    user = "postgres",
-    password = "root",
-    port = "5432"
+from sqlalchemy import create_engine,MetaData,Table
+from sqlalchemy import Integer,Text,Column,insert,values
+engine = create_engine(
+    "postgresql+psycopg2://postgres:root@localhost:5432/sqlalchemy_tuts", 
+    echo=False)
+conn = engine.connect()
+metadata = MetaData()
+books = Table("name",metadata,
+              Column("age",Integer),
+              Column("Name",Text,primary_key=True),
+              Column("IP",Text)
 )
-
-cur = conn.cursor()
-# New Data_base
-def create_new_dastabase():
-    cur.execute(""" INSERT INTO person (name, age, email) VALUES
-                ('John', 25, 'M'),
-                ('Jane', 30, 'F'),
-                ('Bob', 40, 'M'),
-                ('Engeline', 19, 'F');
-                """)
-#input Data
-def input_data(age,name,email):
-    #insert data
-    if name and age and email != 0:
-        cur.execute(f""" INSERT INTO person (name, age, email) VALUES({age},{name},{email});""")
-        conn.commit()
-
-#Select data
-def select_Data():
-    cur.execute(""" SELECT * from person""")
-    return cur.fetchall()
-cur.close
-conn.close()
+metadata.create_all(engine)
+ins = books.insert().values([
+    {'age':18,'Name':'Daniil','IP':'127.0.0.1:8000'}
+])
+conn.execute(ins)
+conn.commit()
