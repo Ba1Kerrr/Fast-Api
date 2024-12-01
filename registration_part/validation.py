@@ -1,0 +1,2 @@
+full_name,username,email,password = 'Hello','adada','adadad@f','ada'
+print(f"INSERT INTO site_registrations (Full_Name,Username,Email,Password) VALUES ('{full_name}','{username}','{email}','{password}')")
