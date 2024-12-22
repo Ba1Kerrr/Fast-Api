@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="{{ url_for('static', path='./static/index.css') }}" rel="stylesheet">   
+    <link href="{{ url_for('static', path='./static/registrate.css') }}" rel="stylesheet">   
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,15 +11,15 @@
         <div class="title">Registration Form</div>
         <hr>
         <div class="content">
-          <form method="post" id="form" action="/registrate">
+          <form method="post" id="form" action="/register">
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">Full Name</span>
-                    <input type="text" name="full_name" placeholder="Enter your name" required>
+                    <input type="text" id="full_name" name="full_name">
                 </div>
                 <div class="input-box">
                     <span class="details">Username</span>
-                    <input type="text" name="username" placeholder="Enter your username" required>
+                    <input type="text" id="username" name="username" required>
                 </div>
                 <div class="input-box">
                     <span class="details">Email</span>
@@ -44,4 +44,3 @@
     </div>
 </body>
 </html>
-{{ script }}
